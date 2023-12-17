@@ -1,0 +1,35 @@
+.switcher {
+    display: flex;
+    align-items: center;
+}
+
+.switcher__button {
+    min-width: 60px;
+    padding: 7px 15px;
+    color: #333333;
+    text-align: center;
+    cursor: pointer;
+}
+
+.switcher__onButton_active {
+    background-color: green;
+    color: #ffffff;
+}
+
+.switcher__offButton_active {
+    background-color: crimson;
+    color: #ffffff;
+}
+
+.switcher__indicator {
+    margin-left: 20px;
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(ellipse at center, crimson 15%, #ffffff 100%);
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.switcher__indicator_isOn {
+    background: radial-gradient(ellipse at center, green 15%, #ffffff 100%);
+}
