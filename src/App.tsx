@@ -3,6 +3,7 @@ import './App.css';
 import Rating from "./components/Raiting/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from './components/OnOff/OnOff';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 type PageTitlePropsType = {
     title: string
@@ -17,7 +18,8 @@ function App() {
             <Accordion titleValue={"Menu"} collapsed={true}/>
             Article 2
             <Rating value={4}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
+            {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
+            <UncontrolledAccordion titleValue={"Users"}/>
             <OnOff on={true} />
         </div>
     );
