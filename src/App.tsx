@@ -16,12 +16,12 @@ function App() {
             <PageTitle title={"This is App component"}/>
             Article 1
             <Rating value={3}/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
+            <Accordion titleValue={"Menu"} collapsed={false}/>
+            <hr/>
             Article 2
-            {/*<Rating value={4}/>*/}
             <UncontrolledRating />
-            {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
             <UncontrolledAccordion titleValue={"Users"}/>
+            <hr/>
             <OnOff on={true} />
         </div>
     );
