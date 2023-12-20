@@ -28,11 +28,13 @@ function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
 }
 
 function AccordionTitle(props: UncontrolledAccordionTitlePropsType) {
+    const styles = {
+        cursor: 'pointer',
+        color: 'darkblue'
+    }
+
     return (
-        <>
-            <h3>{props.title}</h3>
-            <button onClick={props.onToggle}>TOGGLE</button>
-        </>
+        <h3 onClick={props.onToggle} style={styles}>{props.title}</h3>
     );
 }
 
