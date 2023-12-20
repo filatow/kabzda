@@ -4,6 +4,7 @@ import Rating from "./components/Raiting/Rating";
 import Accordion from "./components/Accordion/Accordion";
 import {OnOff} from './components/OnOff/OnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
 
 type PageTitlePropsType = {
     title: string
@@ -17,7 +18,8 @@ function App() {
             <Rating value={3}/>
             <Accordion titleValue={"Menu"} collapsed={true}/>
             Article 2
-            <Rating value={4}/>
+            {/*<Rating value={4}/>*/}
+            <UncontrolledRating />
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
             <UncontrolledAccordion titleValue={"Users"}/>
             <OnOff on={true} />
