@@ -34,7 +34,7 @@ function AccordionTitle(props: UncontrolledAccordionTitlePropsType) {
     }
 
     return (
-        <h3 onClick={props.onToggle} style={styles}>{props.title}</h3>
+        <h3 onClick={() => props.onToggle()} style={styles}>{props.title}</h3>
     );
 }
 
