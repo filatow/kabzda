@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Rating, {RatingValueType} from './components/Raiting/Rating';
-import Accordion from "./components/Accordion/Accordion";
+import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
@@ -14,27 +14,32 @@ type PageTitlePropsType = {
 function App() {
     const [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(0);
     const [controlledAccordionCollapsed, setControlledAccordionCollapsed] = useState(false);
-    const [controlledOnOffState, setControlledOnOffState] = useState(true);
+    const [controlledOnOffIsOn, setControlledOnOffIsOn] = useState(true);
+    const [UncontrolledOnOffState, setUncontrolledOnOffState] = useState(false);
 
     return (
         <div className={'App'}>
-            <PageTitle title={"This is App component"}/>
+            <PageTitle title={'This is App component'}/>
             Article 1
             <Rating
                 value={controlledRatingValue}
                 onClick={setControlledRatingValue}
             />
             <Accordion
-                titleValue={"Menu"}
+                titleValue={'Menu'}
                 collapsed={controlledAccordionCollapsed}
-                toggle={setControlledAccordionCollapsed}
+                onToggle={setControlledAccordionCollapsed}
             />
-            <OnOff isOn={controlledOnOffState} toggleSwitcher={setControlledOnOffState}/>
+            <OnOff
+                isOn={controlledOnOffIsOn}
+                onToggle={setControlledOnOffIsOn}
+            />
             <hr/>
             Article 2
-            <UncontrolledRating />
-            <UncontrolledAccordion titleValue={"Users"}/>
-            <UncontrolledOnOff />
+            <UncontrolledRating/>
+            <UncontrolledAccordion titleValue={'Users'}/>
+            <UncontrolledOnOff onChange={setUncontrolledOnOffState}/>
+            <p>UncontrolledOnOff is on: {String(UncontrolledOnOffState)}</p>
         </div>
     );
 }

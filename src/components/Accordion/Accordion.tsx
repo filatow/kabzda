@@ -3,7 +3,7 @@ import React from 'react';
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
-    toggle: (value: boolean) => void
+    onToggle: (value: boolean) => void
 }
 
 type AccordionTitlePropsType = {
@@ -16,7 +16,7 @@ function Accordion(props: AccordionPropsType) {
         <div>
             <AccordionTitle
                 title={props.titleValue}
-                onClick={() => props.toggle(!props.collapsed)}
+                onClick={() => props.onToggle(!props.collapsed)}
             />
             {!props.collapsed && <AccordionBody/>}
         </div>

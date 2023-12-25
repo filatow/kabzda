@@ -1,18 +1,35 @@
 import React, {useState} from 'react';
 import './UncontrolledOnOff.css'
 
+type UncontrolledOnOffPropsType = {
+    onChange: (isOn: boolean) => void
+}
 
-export const UncontrolledOnOff = () => {
-    const [on, setOn] = useState<boolean>(true);
+export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
+    const [on, setOn] = useState<boolean>(false);
 
     const onButtonClassName = `switcher__button switcher__onButton ${on && 'switcher__onButton_active'}`;
     const offButtonClassName = `switcher__button switcher__offButton ${!on && 'switcher__offButton_active'}`;
     const indicatorClassName = `switcher__indicator ${on && 'switcher__indicator_isOn'}`;
+    const onButtonClickHandler = () => {
+        setOn(true)
+        props.onChange(true)
+    };
+    const offButtonClickHandler = () => {
+        setOn(false)
+        props.onChange(false)
+    };
 
     return (
         <div className={'switcher'}>
-            <button onClick={() => setOn(true)} className={onButtonClassName}>ON</button>
-            <button onClick={() => setOn(false)} className={offButtonClassName}>OFF</button>
+            <button
+                className={onButtonClassName}
+                onClick={onButtonClickHandler}
+            >ON</button>
+            <button
+                className={offButtonClassName}
+                onClick={offButtonClickHandler  }
+            >OFF</button>
             <span className={indicatorClassName}></span>
         </div>
     );
