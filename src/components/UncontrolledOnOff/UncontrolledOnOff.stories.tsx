@@ -8,6 +8,7 @@ export default {
 }
 
 const onChangeCB = action('ON/OFF was clicked');
-export const FullFeatured = () => {
-    return <UncontrolledOnOff onChange={onChangeCB} />
-}
+export const FullFeatured = () => <UncontrolledOnOff onChange={onChangeCB} />
+export const WithDefaultIsOn = () => <UncontrolledOnOff defaultOn={true} onChange={onChangeCB} />
+export const WithDefaultIsOff = () => <UncontrolledOnOff defaultOn={false} onChange={onChangeCB} />
+

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Rating, {RatingValueType} from './components/Raiting/Rating';
 import Accordion from './components/Accordion/Accordion';
-import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
 import {OnOff} from './components/OnOff/OnOff';

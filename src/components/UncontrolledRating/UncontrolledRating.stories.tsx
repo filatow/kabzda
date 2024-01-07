@@ -6,6 +6,5 @@ export default {
     component: UncontrolledRating,
 }
 
-export const FullFeatured = () => {
-    return <UncontrolledRating />
-}
+export const FullFeatured = () => <UncontrolledRating />
+export const WithDefaultValue = () => <UncontrolledRating defaultValue={3} />

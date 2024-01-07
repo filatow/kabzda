@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 
-type UncontrolledRatingPropsType = {}
+type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+
+type UncontrolledRatingPropsType = {
+    defaultValue?: RatingValueType
+}
 
 type StarPropsType = {
     selected: boolean
@@ -8,7 +12,8 @@ type StarPropsType = {
 }
 
 function UncontrolledRating(props: UncontrolledRatingPropsType) {
-    const [value, setValue] = useState(0);
+    const initialValue = props.defaultValue || 0;
+    const [value, setValue] = useState<RatingValueType>(initialValue);
 
     return (
         <div>

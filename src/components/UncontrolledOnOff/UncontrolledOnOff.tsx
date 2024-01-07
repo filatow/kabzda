@@ -3,10 +3,12 @@ import './UncontrolledOnOff.css'
 
 type UncontrolledOnOffPropsType = {
     onChange: (isOn: boolean) => void
+    defaultOn?: boolean
 }
 
 const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
-    const [on, setOn] = useState<boolean>(false);
+    const initialOn = props.defaultOn || false;
+    const [on, setOn] = useState<boolean>(initialOn);
 
     const onButtonClassName = `switcher__button switcher__onButton ${on && 'switcher__onButton_active'}`;
     const offButtonClassName = `switcher__button switcher__offButton ${!on && 'switcher__offButton_active'}`;
