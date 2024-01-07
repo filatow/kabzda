@@ -5,7 +5,7 @@ type UncontrolledOnOffPropsType = {
     onChange: (isOn: boolean) => void
 }
 
-export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
+const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
     const [on, setOn] = useState<boolean>(false);
 
     const onButtonClassName = `switcher__button switcher__onButton ${on && 'switcher__onButton_active'}`;
@@ -34,3 +34,5 @@ export const UncontrolledOnOff = (props: UncontrolledOnOffPropsType) => {
         </div>
     );
 };
+
+export default UncontrolledOnOff;
