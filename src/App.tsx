@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import Rating, {RatingValueType} from './components/Raiting/Rating';
+import Rating, {RatingValue} from './components/Raiting/Rating';
 import Accordion from './components/Accordion/Accordion';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
@@ -12,7 +12,7 @@ type PageTitlePropsType = {
 }
 
 function App() {
-    const [controlledRatingValue, setControlledRatingValue] = useState<RatingValueType>(0);
+    const [controlledRatingValue, setControlledRatingValue] = useState<RatingValue>(0);
     const [controlledAccordionCollapsed, setControlledAccordionCollapsed] = useState(false);
     const [controlledOnOffIsOn, setControlledOnOffIsOn] = useState(true);
     const [UncontrolledOnOffState, setUncontrolledOnOffState] = useState(false);

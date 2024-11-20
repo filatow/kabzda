@@ -2,9 +2,9 @@ import React from 'react';
 import UncontrolledRating from './UncontrolledRating';
 
 export default {
-    title: 'Uncontrolled Rating',
-    component: UncontrolledRating,
+  title: 'Uncontrolled Rating',
+  component: UncontrolledRating,
 }
 
-export const FullFeatured = () => <UncontrolledRating />
-export const WithDefaultValue = () => <UncontrolledRating defaultValue={3} />
+export const FullFeatured = () => <UncontrolledRating/>
+export const WithDefaultValue = () => <UncontrolledRating defaultValue={3}/>
