@@ -7,7 +7,7 @@ import React, {useState} from 'react';
 export default {
   title: 'Accordion',
   component: Accordion,
-};
+}
 
 // type Story = StoryObj<typeof Accordion>;
 // export const FirstStory: Story = {
@@ -18,6 +18,14 @@ export default {
 // }
 
 const onToggleHandler = action('onToggle')
+const onItemClickHandler = action('onItemClick')
+
+const users = [
+  { id: 1, title: 'Dimych' },
+  { id: 2, title: 'Valera' },
+  { id: 3, title: 'Victor' },
+  { id: 4, title: 'Sveta' },
+]
 
 export const FullFeatured = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -29,6 +37,8 @@ export const FullFeatured = () => {
       onToggle={() => {
         setCollapsed((current) => !current)
       }}
+      items={users}
+      onItemClick={onItemClickHandler}
     />
   )
 }
@@ -39,6 +49,8 @@ export const Collapsed = () => {
       titleValue="Collapsed Accordion"
       collapsed={true}
       onToggle={onToggleHandler}
+      items={[]}
+      onItemClick={onItemClickHandler}
     />
   )
 }
@@ -50,6 +62,8 @@ export const Expanded = () => {
       collapsed={false}
       onToggle={() => {
       }}
+      items={users}
+      onItemClick={onItemClickHandler}
     />
   )
 }
