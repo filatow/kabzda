@@ -1,6 +1,11 @@
+*:focus-visible {
+  outline: 2px solid rgba(52, 152, 219, 1);
+}
+
 .select {
   box-sizing: border-box;
   display: inline-block;
+  position: relative;
   min-width: 120px;
   font-family: Roboto, 'sans-serif';
   cursor: pointer;
@@ -46,19 +51,33 @@
 }
 
 .options {
+  display: none;
   list-style: none;
   margin: 0;
   padding: 0;
   box-shadow: 0 0 5px rgba(1,1,1,0.15);
 }
 
-.options li {
+.selectExpanded .options {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  display: block;
+  width: 100%;
+}
+
+.option {
   padding: 6px 6px 6px 12px;
   font-size: 0.9em;
   color: rgba(1,1,1, 0.85);
 }
 
-.options li:hover {
+.option:hover {
   background-color: rgba(0,0,0,0.05);
   color: rgb(33, 140, 211);
+}
+
+.optionSelected {
+  color: rgba(1,1,1,0.9);
+  background-color: rgba(52, 152, 219, 0.5);
 }

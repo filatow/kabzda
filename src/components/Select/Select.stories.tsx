@@ -27,7 +27,7 @@ export const FullFeaturedUnsetAndExpanded = () => {
     value={value}
     setValue={setValue}
     options={cities}
-    startCollapsed={false}
+    startExpanded={true}
   />
 }
 
