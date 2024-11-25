@@ -1,4 +1,4 @@
-import React, {useMemo, useState} from 'react'
+import React, {useCallback, useMemo, useState} from 'react'
 
 export default {
   title: 'useMemo'
@@ -9,7 +9,7 @@ export const ComplexCalculation = () => {
   const [b, setB] = useState<number>(0)
 
   let factorialB = 1;
-  let factorialA = 1;
+  let factorialA;
 
   factorialA = useMemo(() => {
     let resultA = 1;
@@ -19,13 +19,13 @@ export const ComplexCalculation = () => {
         fake++
         Math.random()
       }
-      resultA =resultA * i
+      resultA = resultA * i
     }
     return resultA
   }, [a])
 
   for (let i = 1; i <= b; i++) {
-    factorialB =factorialB * i
+    factorialB = factorialB * i
   }
 
   return <>
@@ -65,5 +65,47 @@ export const HelpsToReactMemo = () => {
     <hr/>
     <button onClick={() => addUser()}>add user</button>
     <Users users={filteredUsers}/>
+  </>
+}
+
+type BooksProps = {
+  books: string[]
+  addBook: () => void
+}
+
+const Books = React.memo(
+  (props: BooksProps) => {
+    console.log('render Books')
+    return (
+      <div>
+        <button onClick={() => props.addBook()}>add book</button>
+        {props.books.map((book, i) => {
+          return <div key={i}>{book}</div>
+        })}
+      </div>
+    )
+  }
+)
+
+export const LikeUseCallback = () => {
+  const [count, setCount] = useState(0)
+  const [books, setBooks] = useState(['React', 'CSS', 'JS', 'HTML'])
+
+  const filteredBooks = useMemo(() => {
+    return books.filter((u) => u.toLowerCase().includes('a'))
+  }, [books])
+
+  const addBook = () => {
+    setBooks([...books, 'Angular ' + new Date().getTime()])
+  }
+
+  // const _addBookWrappedWithUseMemo = useMemo(() => addBook, [books])
+  const addBookWrappedWithUseCallback = useCallback(addBook, [books])
+
+  return <>
+    <button onClick={() => setCount(count + 1)}>+</button>
+    -- {count}
+    <hr/>
+    <Books books={filteredBooks} addBook={addBookWrappedWithUseCallback}/>
   </>
 }
