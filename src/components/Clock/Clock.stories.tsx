@@ -6,18 +6,18 @@ export default {
 }
 
 export const SimpleClock = () => {
-  return <Clock/>
+  return <Clock />
 }
 
 export const ClockWithHideButton = () => {
   const [clockIsVisible, setClockIsVisible] = useState(true)
 
   return <>
-    {clockIsVisible && <Clock />}
+    {clockIsVisible && <Clock format={'analog'} />}
     <hr/>
     <button
       type={'button'}
       onClick={() => setClockIsVisible(clockIsVisible => !clockIsVisible)}
-    >Toggle Clock</button>
+    >Toggle Visibility</button>
   </>
 }

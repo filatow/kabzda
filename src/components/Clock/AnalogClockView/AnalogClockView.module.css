@@ -1,0 +1,88 @@
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+  border: 3px solid darkslateblue;
+  background-color: bisque;
+}
+
+.hourDigit {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  color: darkslateblue;
+  font-size: 28px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.hourThree {
+  top: 50%;
+  right: 0;
+  transform: translateY(-15px);
+}
+
+.hourSix {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-15px);
+}
+
+.hourNine {
+  top: 50%;
+  left: 0;
+  transform: translateY(-15px);
+}
+
+.hourTwelve {
+  top: 0;
+  left: 50%;
+  transform: translateX(-15px);
+}
+
+.clockFaceCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: darkslateblue;
+  transform: translate(-10px, -10px);
+}
+
+.secondsArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 39%;
+  height: 1px;
+  background-color: darkslateblue;
+  box-shadow: 0 0 1px 3px rgba(72, 61, 139, 0.1);
+  transform-origin: center left;
+}
+
+.minutesArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36%;
+  height: 3px;
+  background-color: darkslateblue;
+  box-shadow: 0 0 1px 3px rgba(72, 61, 139, 0.05);
+  transform-origin: center left;
+}
+
+.hoursArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27%;
+  height: 5px;
+  background-color: darkslateblue;
+  box-shadow: 0 0 1px 3px rgba(72, 61, 139, 0);
+  transform-origin: center left;
+}
